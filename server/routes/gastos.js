@@ -150,21 +150,6 @@ router.get("/get-gastos/:fecha", async (req, res) => {
   }
 });
 
-// router.get("/get-gastos/:fecha", (req, res) => {
-//   const { fecha } = req.params;
-
-//   // Proyectar solo los campos deseados usando el método select
-//   Gasto.find({ "date.fecha": fecha })
-//     .select("tipo date motivo monto idUser") // Seleccionar los campos específicos
-//     .then((infoGastos) => {
-//       res.json(infoGastos);
-//     })
-//     .catch((error) => {
-//       console.error("Error al obtener los datos:", error);
-//       res.status(500).json({ mensaje: "Error al obtener los datos" });
-//     });
-// });
-
 // Ruta para eliminar un gasto por su ID
 router.delete("/delete-gasto/:id", openingHours, async (req, res) => {
   const { id } = req.params;
